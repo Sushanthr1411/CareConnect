@@ -1,0 +1,185 @@
+/* Body and general settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3f51b5, #2196f3);
+    color: #fff;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Header - Title and Subtitle */
+header {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Glassy Effect Container for Chatbox */
+#chatbox {
+    width: 400px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.6); /* Glass effect */
+    backdrop-filter: blur(10px); /* Makes it look like frosted glass */
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    animation: fadeIn 1s ease-out; /* Animation for the chatbox */
+}
+
+/* Message Box */
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* User and bot message styles */
+.message {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 1rem;
+    max-width: 80%;
+    word-wrap: break-word;
+    animation: messageFade 0.5s ease-out;
+}
+
+.user {
+    background-color: #d1c4e9;
+    align-self: flex-end;
+    color: #3f51b5;
+}
+
+.bot {
+    background-color: #e8f5e9;
+    align-self: flex-start;
+    color: #388e3c;
+}
+
+/* Input field (Message typing box) */
+#userInput {
+    width: calc(100% - 80px);
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: 0.3s ease-in-out;
+}
+
+#userInput:focus {
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(98, 0, 234, 0.8);
+}
+
+/* Send Button */
+#sendBtn {
+    width: 60px;
+    background: #6200ea;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    animation: buttonPulse 1.5s infinite;
+}
+
+#sendBtn:hover {
+    background: #3700b3;
+}
+
+/* Cool Footer Text */
+footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: italic;
+    animation: footerAnimation 2s ease-out infinite;
+}
+
+footer span {
+    font-weight: bold;
+    color: #fbc02d; /* Gold accent for name */
+}
+
+/* Fade-in effect for chatbox */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in effect for each message */
+@keyframes messageFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Send button pulse animation */
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    #chatbox {
+        width: 100%;
+        height: 70vh;
+    }
+}
